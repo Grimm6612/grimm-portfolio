@@ -151,11 +151,11 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .gallery-grid .cover-card img {
   position: absolute;
   inset: 0;
-  opacity: 0.8;
+  opacity: 0.6;
   transition: opacity 0.4s;
 }
 
-.gallery-grid .cover-card:hover img { opacity: 0.6; }
+.gallery-grid .cover-card:hover img { opacity: 0.9; }
 
 .gallery-grid .cover-card .card-label {
   position: relative;
