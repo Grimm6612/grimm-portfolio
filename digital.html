@@ -29,33 +29,41 @@
     <img id="lightbox-img" src="" alt="">
     <span id="lightbox-next">›</span>
   </div>
-
   <script src="nav.js"></script>
   <script>
     buildNav('digital.html');
 
-    // ══════════════════════════════════════════════════════
-    // ADD NEW IMAGES HERE
-    // Just append a new filename to this array.
-    // Put the image file in:  images/digital/
-    // Example:  'my-new-sketch.jpg',
-    // ══════════════════════════════════════════════════════
-    const IMAGES = [
-      'images/digital/sketch-01.jpg',
-      'images/digital/sketch-02.jpg',
-      'images/digital/sketch-03.jpg',
-      // ← add more here
-    ];
+    // Auto-loads every image from the manifest.
+    // To add images: drop files into the matching images/ folder,
+    // then run  python build.py  (or push — GitHub Action handles it).
+    async function loadGallery() {
+      const gallery = document.getElementById('gallery');
 
-    const gallery = document.getElementById('gallery');
-    IMAGES.forEach(src => {
-      const div = document.createElement('div');
-      div.className = 'thumb';
-      div.innerHTML = `<img src="${src}" alt="" loading="lazy">`;
-      gallery.appendChild(div);
-    });
+      let images = [];
+      try {
+        const res = await fetch('images/digital/manifest.json');
+        images = await res.json();
+      } catch (e) {
+        gallery.innerHTML = '<p style="padding:40px;color:var(--muted)">No images found yet.</p>';
+        return;
+      }
 
-    buildLightbox(IMAGES);
+      if (images.length === 0) {
+        gallery.innerHTML = '<p style="padding:40px;color:var(--muted)">No images yet — add some to images/ and run build.py.</p>';
+        return;
+      }
+
+      images.forEach(src => {
+        const div = document.createElement('div');
+        div.className = 'thumb';
+        div.innerHTML = `<img src="${src}" alt="" loading="lazy">`;
+        gallery.appendChild(div);
+      });
+
+      buildLightbox(images);
+    }
+
+    loadGallery();
   </script>
 </body>
 </html>
