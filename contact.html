@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRIMM — Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <aside id="sidebar">
+    <a class="logo" href="index.html">GRIMM</a>
+    <nav id="nav"></nav>
+  </aside>
+
+  <main id="content">
+    <h1 class="page-title">Contact</h1>
+
+    <div class="contact-wrap">
+      <p class="contact-note">
+        For the fastest response please use Discord to contact me.<br><br>
+        Message: <strong>grimm6612</strong>
+      </p>
+
+      <!--
+        The form below uses Formspree (https://formspree.io) — it's free
+        for up to 50 submissions/month with no backend required.
+        Steps:
+          1. Sign up at formspree.io
+          2. Create a new form, copy your form ID
+          3. Replace YOUR_FORM_ID below with it
+          e.g.  action="https://formspree.io/f/xabc1234"
+      -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contact-form">
+
+        <div class="field-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+
+        <div class="field-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+        </div>
+
+        <div class="field-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" placeholder="Your Message…" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit</button>
+        <p id="form-status" style="margin-top:16px;font-size:0.8rem;color:var(--accent);"></p>
+      </form>
+    </div>
+
+    <div class="footer">
+      <a href="#" onclick="window.scrollTo({top:0});return false;">↑ Back to Top</a>
+    </div>
+  </main>
+
+  <script src="nav.js"></script>
+  <script>
+    buildNav('contact.html');
+
+    // Progressive enhancement: show success message without page reload
+    const form   = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      status.textContent = 'Sending…';
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST', body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          status.textContent = 'Message sent — thanks!';
+          form.reset();
+        } else {
+          status.textContent = 'Something went wrong. Please try again.';
+        }
+      } catch {
+        status.textContent = 'Network error. Please try again.';
+      }
+    });
+  </script>
+</body>
+</html>
