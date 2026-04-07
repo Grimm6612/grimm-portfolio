@@ -4,6 +4,8 @@ A static portfolio site. No build tools, no dependencies. Pure HTML/CSS/JS.
 
 ---
 
+### Make sure to update the build.py with any new folders/sketchbooks you add.
+
 ## GitHub Pages Setup (one-time)
 
 1. **Create a repo** on github.com — name it anything (e.g. `portfolio`)
