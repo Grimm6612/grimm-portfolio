@@ -23,6 +23,7 @@ SCAN_FOLDERS = [
     'images/sketchbook-ongoing',
     'images/sketchbook-jan-feb',
     'images/sketchbook-nov-jan',
+    'images/sketchbook-feb-april'
 ]
 
 def scan_folder(folder_path):
