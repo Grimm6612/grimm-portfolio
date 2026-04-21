@@ -20,10 +20,11 @@ IMAGE_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif'}
 SCAN_FOLDERS = [
     'images/work',
     'images/digital',
-    'images/sketchbook-ongoing',
+    'images/sketchbook-april-ongoing',
     'images/sketchbook-jan-feb',
     'images/sketchbook-nov-jan',
-    'images/sketchbook-feb-april'
+    'images/sketchbook-feb-april',
+    'images/sketchbook-april4th-april12th'
 ]
 
 def scan_folder(folder_path):
