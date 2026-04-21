@@ -6,9 +6,11 @@ function buildNav(activeHref) {
     { href: 'about.html',              label: 'About me' },
     { href: '#',                       label: 'WORK', class: 'section-label' },
     { href: 'digital.html',            label: 'Digital',                   sub: true },
-    { href: 'sketchbook-ongoing.html', label: 'Sketchbook 26/02/14–Ongoing', sub: true },
+    { href: 'sketchbook-feb-april.html', label: 'Sketchbook 26/02/14–26/04/01', sub: true },
     { href: 'sketchbook-jan-feb.html', label: 'Sketchbook 26/01/17–26/02/13', sub: true },
     { href: 'sketchbook-nov-jan.html', label: 'Sketchbook 25/11/29–26/01/17', sub: true },
+    { href: 'sketchbook-april4th-april12th.html', label: 'Sketchbook 26/04/04–26/04/12', sub: true },
+    { href: 'sketchbook-april-ongoing.html', label: 'Sketchbook 26/04/18-Ongoing', sub: true },
     { href: '#spacer',                 label: '',      class: 'spacer' },
     { href: 'contact.html',            label: 'Contact' },
   ];
