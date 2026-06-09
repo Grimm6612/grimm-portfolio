@@ -31,7 +31,7 @@
   </div>
   <script src="nav.js"></script>
   <script>
-    buildNav('sketchbook-april-ongoing.html');
+    buildNav('sketchbook-april-may.html');
 
     // Auto-loads every image from the manifest.
     // To add images: drop files into the matching images/ folder,
@@ -41,7 +41,7 @@
 
       let images = [];
       try {
-        const res = await fetch('images/sketchbook-april-ongoing/manifest.json');
+        const res = await fetch('images/sketchbook-april-may/manifest.json');
         images = await res.json();
       } catch (e) {
         gallery.innerHTML = '<p style="padding:40px;color:var(--muted)">No images found yet.</p>';
