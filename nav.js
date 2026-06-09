@@ -10,7 +10,8 @@ function buildNav(activeHref) {
     { href: 'sketchbook-jan-feb.html', label: 'Sketchbook 26/01/17–26/02/13', sub: true },
     { href: 'sketchbook-nov-jan.html', label: 'Sketchbook 25/11/29–26/01/17', sub: true },
     { href: 'sketchbook-april4th-april12th.html', label: 'Sketchbook 26/04/04–26/04/12', sub: true },
-    { href: 'sketchbook-april-ongoing.html', label: 'Sketchbook 26/04/18-Ongoing', sub: true },
+    { href: 'sketchbook-april-may.html', label: 'Sketchbook 26/04/18-26/04/15', sub: true },
+    { href: 'sketchbook-may-ongoing.html', label: 'Sketchbook 26/05/16-ongoing', sub: true },
     { href: '#spacer',                 label: '',      class: 'spacer' },
     { href: 'contact.html',            label: 'Contact' },
   ];
