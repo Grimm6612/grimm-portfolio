@@ -20,6 +20,7 @@ IMAGE_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif'}
 SCAN_FOLDERS = [
     'images/work',
     'images/digital',
+    'images/unsorted',
     'images/sketchbook-april-may',
     'images/sketchbook-may-ongoing',
     'images/sketchbook-jan-feb',
